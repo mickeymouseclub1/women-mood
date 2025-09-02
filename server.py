@@ -20,6 +20,10 @@ load_dotenv(ROOT_DIR / '.env')
 
 # Create the main app without a prefix
 app = FastAPI()
+@app.get("/")
+async def root():
+    return {"message": "✅ Server is running fine!"}
+
 
 # Create a router with the /api prefix
 api_router = APIRouter(prefix="/api")
